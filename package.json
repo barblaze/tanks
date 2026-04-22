@@ -4,9 +4,8 @@
   "description": "Tank Battle Ultra - Mobile Tank Game",
   "main": "index.html",
   "scripts": {
-    "dev": "echo 'Open index.html in browser'",
-    "build": "npx cap add android && npx cap sync android",
-    "sync": "npx cap sync android"
+    "build": "vite build",
+    "sync": "cap sync"
   },
   "keywords": ["game", "tank", "phaser"],
   "author": "",
@@ -15,6 +14,9 @@
     "@capacitor/android": "^6.0.0",
     "@capacitor/core": "^6.0.0",
     "@capacitor/cli": "^6.0.0"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
   },
   "devDependencies": {}
 }
