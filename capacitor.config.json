@@ -1,0 +1,12 @@
+{
+  "appId": "com.barblaze.tanks",
+  "appName": "Tank Battle Ultra",
+  "webDir": ".",
+  "bundledWebRuntime": false,
+  "android": {
+    "allowMixedContent": true
+  },
+  "server": {
+    "androidScheme": "https"
+  }
+}

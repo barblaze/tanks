@@ -1,0 +1,14 @@
+{
+  "name": "tank-battle-ultra",
+  "version": "1.0.0",
+  "description": "Tank Battle Ultra - Mobile Tank Game",
+  "main": "index.html",
+  "scripts": {
+    "dev": "echo 'Open index.html in browser'",
+    "build": "npx capacitor build android",
+    "sync": "npx capacitor sync android"
+  },
+  "keywords": ["game", "tank", "phaser"],
+  "author": "",
+  "license": "MIT"
+}
