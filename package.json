@@ -5,10 +5,16 @@
   "main": "index.html",
   "scripts": {
     "dev": "echo 'Open index.html in browser'",
-    "build": "npx capacitor build android",
+    "build": "npx capacitor add android && npx capacitor build android",
     "sync": "npx capacitor sync android"
   },
   "keywords": ["game", "tank", "phaser"],
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@capacitor/android": "^6.0.0",
+    "@capacitor/core": "^6.0.0",
+    "@capacitor/cli": "^6.0.0"
+  },
+  "devDependencies": {}
 }
