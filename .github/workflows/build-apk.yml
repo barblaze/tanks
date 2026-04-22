@@ -21,22 +21,38 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
+      - name: Cache Android SDK
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/android-sdk
+            /usr/local/lib/android/sdk
+          key: android-sdk-r23c-${{ runner.os }}-${{ hashFiles('.github/workflows/build-apk.yml') }}
+
       - name: Setup Android SDK
         uses: android-actions/setup-android-sdk@v2
         with:
           cmdline-tools: latest
 
       - name: Accept Android licenses
-        run: yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses || true
+        run: |
+          yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses 2>/dev/null || true
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
 
       - name: Install Dependencies
         run: npm install
 
+      - name: Add Android platform
+        run: npx capacitor add android
+
       - name: Build Android APK
+        run: npx capacitor build android --release
         env:
-          ANDROID_HOME: ${{ env.ANDROID_HOME }}
           JAVA_HOME: ${{ env.JAVA_HOME }}
-        run: npm run build
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
