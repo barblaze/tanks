@@ -5,8 +5,8 @@
   "main": "index.html",
   "scripts": {
     "dev": "echo 'Open index.html in browser'",
-    "build": "npx capacitor build android --release",
-    "sync": "npx capacitor sync android"
+    "build": "npx cap add android && npx cap sync android",
+    "sync": "npx cap sync android"
   },
   "keywords": ["game", "tank", "phaser"],
   "author": "",
